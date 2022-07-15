@@ -1,0 +1,201 @@
+   
+{	
+	"fieldDefinition":[
+		{
+                        "fieldName" : "row_id",
+                        "matchType" : "DONT_USE",
+                        "fields" : "row_id",
+                        "dataType": "\"string\"" 
+                },
+		{
+                        "fieldName" : "title_unfiltered",
+                        "matchType" : "DONT_USE",
+                        "fields" : "row_id",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "title_filtered",
+                        "matchType" : "fuzzy",	
+                        "fields" : "title",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "binder",
+                        "matchType": "fuzzy",
+                        "fields" : "binder",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "wrapper",
+                        "matchType": "fuzzy",
+                        "fields" : "wrapper",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "filler",
+                        "matchType": "fuzzy",
+                        "fields" : "filler",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "size",
+                        "matchType": "EXACT",
+                        "fields" : "size",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "country",
+                        "matchType": "EXACT",
+                        "fields" : "country",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "length_fraction",
+                        "matchType": "EXACT",
+                        "fields" : "length_fraction",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "length_float",
+                        "matchType": "EXACT",
+                        "fields" : "length_float",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "ring_gauge",
+                        "matchType": "EXACT",
+                        "fields" : "ring_gauge",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "strength",
+                        "matchType": "DONT_USE",
+                        "fields" : "strength",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "rating",
+                        "matchType": "DONT_USE",
+                        "fields" : "rating",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "extract_vitola",
+                        "matchType": "fuzzy",
+                        "fields" : "extract_vitola",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "extract_seed",
+                        "matchType": "fuzzy",
+                        "fields" : "extract_seed",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "extract_color",
+                        "matchType": "fuzzy",
+                        "fields" : "extract_color",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "extract_region",
+                        "matchType": "fuzzy",
+                        "fields" : "extract_region",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "extract_brand",
+                        "matchType": "fuzzy",
+                        "fields" : "extract_brand",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "extract_line",
+                        "matchType": "fuzzy",
+                        "fields" : "extract_line",
+                        "dataType": "\"string\"" 
+                },
+                {
+                        "fieldName" : "extract_size",
+                        "matchType": "fuzzy",
+                        "fields" : "extract_size",
+                        "dataType": "\"string\"" 
+                },
+		{
+                        "fieldName" : "source_df",
+                        "matchType" : "DONT_USE",
+                        "fields" : "source_df",
+                        "dataType": "\"string\"" 
+                },
+		{
+                        "fieldName" : "color",
+                        "matchType" : "DONT_USE",
+                        "fields" : "color",
+                        "dataType": "\"string\"" 
+                },
+		{
+                        "fieldName" : "brand_and_title",
+                        "matchType" : "DONT_USE",
+                        "fields" : "brand_and_title",
+                        "dataType": "\"string\"" 
+                },
+		{
+                        "fieldName" : "manufacturer",
+                        "matchType" : "DONT_USE",
+                        "fields" : "manufacturer",
+                        "dataType": "\"string\"" 
+                }
+		],
+		"output" : [{
+                                "name":"output", 
+                                "format":"csv",
+                                "props": {
+                                	"location": "examples/cigar/master_db_ZinggOutput",
+					"delimiter": ",",
+					"header":true
+                                }
+                	   }],
+		"data" : [{
+			"name":"cigaraf", 
+                        "format":"csv", 
+                        "props": {
+                                	"location": "examples/cigar/master_df.csv",
+					"delimiter": ",",
+					"header":true
+                                },
+			"schema": 
+                                "{\"type\" : \"struct\",
+                                \"fields\" : [ 
+                                        	{\"name\":\"row_id\", \"type\":\"string\", \"nullable\":true},
+						{\"name\":\"title_unfiltered\", \"type\":\"string\", \"nullable\":true}, 
+                                        	{\"name\":\"title_filtered\", \"type\":\"string\", \"nullable\":true}, 
+                                        	{\"name\":\"binder\",\"type\":\"string\",\"nullable\":true},
+                                        	{\"name\":\"wrapper\", \"type\":\"string\", \"nullable\":true}, 
+                                        	{\"name\":\"filler\", \"type\":\"string\", \"nullable\":true},
+                                        	{\"name\":\"size\",\"type\":\"string\",\"nullable\":true} ,
+                                        	{\"name\":\"country\", \"type\":\"string\", \"nullable\":true}, 
+                                        	{\"name\":\"length_fraction\", \"type\":\"string\", \"nullable\":true},
+                                        	{\"name\":\"length_float\",\"type\":\"string\",\"nullable\":true} ,
+                                        	{\"name\":\"ring_gauge\",\"type\":\"string\",\"nullable\":true},
+                                        	{\"name\":\"strength\", \"type\":\"string\", \"nullable\":true},
+                                        	{\"name\":\"rating\", \"type\":\"string\", \"nullable\":true},
+                                        	{\"name\":\"extract_vitola\", \"type\":\"string\", \"nullable\":true},
+                                        	{\"name\":\"extract_seed\", \"type\":\"string\", \"nullable\":true},
+                                        	{\"name\":\"extract_color\", \"type\":\"string\", \"nullable\":true},
+                                        	{\"name\":\"extract_region\", \"type\":\"string\", \"nullable\":true},
+                                        	{\"name\":\"extract_brand\", \"type\":\"string\", \"nullable\":true},
+                                        	{\"name\":\"extract_line\", \"type\":\"string\", \"nullable\":true},
+                                        	{\"name\":\"extract_size\", \"type\":\"string\", \"nullable\":true},
+						{\"name\":\"source_df\", \"type\":\"string\", \"nullable\":true},
+						{\"name\":\"color\", \"type\":\"string\", \"nullable\":true},
+						{\"name\":\"brand_and_title\", \"type\":\"string\", \"nullable\":true},
+						{\"name\":\"manufacturer\", \"type\":\"string\", \"nullable\":true}
+                                	]
+                        	}"
+		}],
+		"labelDataSampleSize" : 0.5,
+		"numPartitions":4,
+		"modelId": 111,
+		"zinggDir": "models"
+
+}
