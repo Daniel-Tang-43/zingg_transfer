@@ -6,7 +6,7 @@ ENV LANG C.UTF-8
 WORKDIR /
 USER root
 WORKDIR /zingg-0.3.4-SNAPSHOT
-RUN curl --location https://www.dropbox.com/s/r4f81gyya8tpr2n/zingg.tar.gz?dl=0 | \
+RUN curl --location https://www.dropbox.com/s/2mj1bq8qfzpm9r8/zingg-0.3.4-SNAPSHOT.tar.gz?dl=0 | \
 tar --extract --gzip --strip=1 
 RUN pip install -r python/requirements.txt
 RUN pip install zingg
